@@ -1,6 +1,6 @@
 package org.mybatis.bu.service;
 
-import org.mybatis.bu.domain.Account;
+import org.mybatis.bu.domain.Persona;
 import org.mybatis.bu.persistence.AccountMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,26 +12,28 @@ public class AccountService {
   @Autowired
   private AccountMapper accountMapper;
 
-  public Account getAccount(String username) {
+  public Persona getAccount(String username) {
     return accountMapper.getAccountByUsername(username);
   }
 
-  public Account getAccount(String username, String password) {
-    Account account = new Account();
-    account.setUsername(username);
+  public Persona getAccount(String username, String password) {
+    Persona account = new Persona();
+   
+    account.setUsuario(username);
     account.setPassword(password);
+   
     return accountMapper.getAccountByUsernameAndPassword(account);
   }
 
   @Transactional
-  public void insertAccount(Account account) {
+  public void insertAccount(Persona account) {
     accountMapper.insertAccount(account);
     accountMapper.insertProfile(account);
     accountMapper.insertSignon(account);
   }
 
   @Transactional
-  public void updateAccount(Account account) {
+  public void updateAccount(Persona account) {
     accountMapper.updateAccount(account);
     accountMapper.updateProfile(account);
 

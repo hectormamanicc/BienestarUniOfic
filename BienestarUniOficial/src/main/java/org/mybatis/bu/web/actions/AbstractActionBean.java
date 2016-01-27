@@ -1,4 +1,4 @@
-package org.mybatis.bu.actions;
+package org.mybatis.bu.web.actions;
 
 import java.io.Serializable;
 

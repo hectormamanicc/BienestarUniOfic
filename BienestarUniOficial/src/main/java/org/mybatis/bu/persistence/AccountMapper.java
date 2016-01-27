@@ -1,23 +1,23 @@
 package org.mybatis.bu.persistence;
 
-import org.mybatis.bu.domain.Account;
+import org.mybatis.bu.domain.Persona;
 
 public interface AccountMapper {
 
-  Account getAccountByUsername(String username);
+  Persona getAccountByUsername(String username);
 
-  Account getAccountByUsernameAndPassword(Account account);
+  Persona getAccountByUsernameAndPassword(Persona account);
 
-  void insertAccount(Account account);
+  void insertAccount(Persona account);
   
-  void insertProfile(Account account);
+  void insertProfile(Persona account);
   
-  void insertSignon(Account account);
+  void insertSignon(Persona account);
 
-  void updateAccount(Account account);
+  void updateAccount(Persona account);
 
-  void updateProfile(Account account);
+  void updateProfile(Persona account);
 
-  void updateSignon(Account account);
+  void updateSignon(Persona account);
 
 }
